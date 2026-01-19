@@ -1,3 +1,5 @@
+from services.auth import get_current_user_id
+from db.schema import UserLogin
 from db.schema import ProductUpdate
 from services.create_product import push_product_to_queue
 from db.schema import get_session
@@ -47,7 +49,7 @@ def create_product(
 
 
 @app.post("/auth/login")
-def login():
+def login(user: UserLogin):
     return {"message": "Login successful"}
 
 

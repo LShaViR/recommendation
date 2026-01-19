@@ -52,6 +52,7 @@ def create_embeddings(
         return {"error": str(e)}
 
 
-while True:
-    product = product_queue.pop(0)
-    create_product(product)
+def create_embeddings_in_loop():
+    while True:
+        product = product_queue.pop(0)
+        create_product(product)
