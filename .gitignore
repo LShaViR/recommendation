@@ -1,4 +1,8 @@
-# Ignore all files in the files directory
-files/*
-
-venv/*
+__pycache__
+app.egg-info
+*.pyc
+.mypy_cache
+.coverage
+htmlcov
+.cache
+.venv
