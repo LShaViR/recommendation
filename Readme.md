@@ -87,7 +87,16 @@ VULTR_SECRET_KEY=...
 3. **Launch with Docker:**
 
 ```bash
-docker-compose up --build
+docker compose -f docker-compose-development.yml --env-file .env up --build
+
+```
+
+4. **Install pnpm package in fe:**
+
+```bash
+cd fe
+pnpm install
+pnpm run dev
 
 ```
 

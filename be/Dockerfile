@@ -1,4 +1,4 @@
-FROM python:3.10
+FROM python:3.10 AS base
 
 ENV PYTHONUNBUFFERED=1
 
@@ -34,11 +34,17 @@ COPY ./scripts /app/scripts
 COPY ./pyproject.toml ./uv.lock ./alembic.ini /app/
 
 COPY ./app /app/app
-COPY ./tests /app/tests
 
 # Sync the project
 # Ref: https://docs.astral.sh/uv/guides/integration/docker/#intermediate-layers
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync
 
+
+FROM base AS api
 CMD ["fastapi", "run", "--workers", "4", "app/main.py"]
+
+
+FROM base AS worker
+# Replace 'celery' or 'rq' with your actual worker command
+CMD ["arq", "app.worker.worker.WorkerSetting"]

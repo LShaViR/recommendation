@@ -88,14 +88,13 @@ async def compute_product_signals(product: Product) -> Product:
     text_desc = (
         f"Product Name: {product.name}. "
         f"Brand: {product.brand}. "
-        f"Category: {product.gender} {product.master_category} - {
-            product.sub_category
-        } ({product.article_type}). "
+        f"Category: {product.gender} {product.master_category} - "
+        f"{product.sub_category} {product.article_type}. "
         f"Color: {product.primary_colour}. "
         f"Season: {product.season}. "
-        f"Style: This is a {product.primary_colour} {
-            product.article_type
-        } with a formality score of {product.formality_score}."
+        f"Style: This is a {product.primary_colour} "
+        f"{product.article_type}"
+        f"with a formality score of {product.formality_score}."
     )
     product.semantic_embedding = text_model.encode(text_desc).tolist()
 
