@@ -2,7 +2,6 @@ from io import BytesIO
 from app.core.config import settings
 from app.models import Product
 from app.worker.utils.config_model import Image, vision_model, text_model
-import torch.nn.functional as F
 import httpx
 
 OCCASIONS = [

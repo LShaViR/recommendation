@@ -96,7 +96,8 @@ def generate_personalized_outfits(session: Session, user: User, base_product: Pr
             scored_items = [
                 item
                 for item in scored_items
-                if item["product"].id not in [outfit["bottom"].id, outfit["shoe"].id]
+                if item["product"].id
+                not in [outfit["bottom"].id, outfit["shoe"].id, outfit["accessory"].id]
             ]
             outfits.append(outfit)
         except StopIteration:
