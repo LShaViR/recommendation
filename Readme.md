@@ -1,6 +1,8 @@
 # Culture circle assignment
 
 A high-performance styling engine that generates complete, personalized outfits in sub-second time. This system uses a **Hybrid Heuristic-Vector approach** to simulate the decision-making process of a professional fashion stylist.
+![Uploading diagram-export-22-01-2026-21_17_08.png…]()
+
 
 ## 🏗️ Technical Stack
 
